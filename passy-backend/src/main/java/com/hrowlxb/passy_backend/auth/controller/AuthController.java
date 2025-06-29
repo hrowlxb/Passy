@@ -1,6 +1,5 @@
 package com.hrowlxb.passy_backend.auth.controller;
 
-import com.hrowlxb.passy_backend.auth.domain.User;
 import com.hrowlxb.passy_backend.auth.dto.LoginRequest;
 import com.hrowlxb.passy_backend.auth.dto.SignUpRequest;
 import com.hrowlxb.passy_backend.auth.service.AuthService;

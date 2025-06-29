@@ -16,3 +16,6 @@ spring:
 jwt:
   secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION}
+
+aes:
+  key: ${AES_SECRET_KEY}

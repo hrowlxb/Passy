@@ -30,4 +30,24 @@ public class JwtProvider {
                 .signWith(Keys.hmacShaKeyFor(secretKey.getBytes()), SignatureAlgorithm.HS256)
                 .compact();
     }
+
+    public boolean validateToken(String token) {
+        try {
+            Jwts.parserBuilder()
+                    .setSigningKey(Keys.hmacShaKeyFor(secretKey.getBytes()))
+                    .build()
+                    .parseClaimsJws(token);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public Claims parseClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(Keys.hmacShaKeyFor(secretKey.getBytes()))
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+    }
 }
