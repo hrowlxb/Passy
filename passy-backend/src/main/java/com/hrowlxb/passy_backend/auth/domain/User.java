@@ -6,6 +6,7 @@ import lombok.*;
 @Entity
 @Table(name = "users")
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User {
 
@@ -18,12 +19,16 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private String nickname;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public User(String email, String password, Role role) {
+    public User(String email, String password, String nickname, Role role) {
         this.email = email;
         this.password = password;
+        this.nickname = nickname;
         this.role = role;
     }
 }
